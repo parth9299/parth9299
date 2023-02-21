@@ -9,7 +9,7 @@ export default function Layout({ children }) {
             <main className="main-content">
                 {children}
             </main>
-            <Footer/>
+            <Footer />
         </>
     )
 }
