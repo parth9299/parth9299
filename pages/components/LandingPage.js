@@ -11,24 +11,24 @@ export default function LandingPage() {
           <Row>
             <Col className="col-10 mx-auto">
               <Row>
-                <Col class="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
+                <Col className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
                   <h1>
                     Grow your business with
-                    <strong class="brand-name"> ThapaTechnical </strong>
+                    <strong className="brand-name"> Parth Patel </strong>
                   </h1>
-                  <h2 class="my-3">
+                  <h2 className="my-3">
                     We are the team of talented developer making websites
                   </h2>
-                  <div class="mt-3">
-                    <Link class="btn-get-started" href="/service">
+                  <div className="mt-3">
+                    <Link className="btn-get-started" href="/service">
                       Get Started
                     </Link>
                   </div>
                 </Col>
-                <div class="col-lg-6 order-1 order-lg-2 header-img">
+                <div className="col-lg-6 order-1 order-lg-2 header-img">
                   <Image
                     src={landingIMG}
-                    class="img-fluid animated"
+                    className="img-fluid animated"
                     alt="Commom img"
                   />
                 </div>

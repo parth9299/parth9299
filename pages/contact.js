@@ -1,11 +1,10 @@
 import React from 'react'
+import Contact from './components/Contact'
 
 export default function contact() {
   return (
     <>
-     <h1>
-        contact us
-     </h1> 
+<Contact/>
     </>
   )
 }
