@@ -12,15 +12,34 @@ export default function LandingPage() {
             <Col className="col-10 mx-auto">
               <Row>
                 <Col className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
-                  <h1>
-                    Grow your business with
-                    <strong className="brand-name"> Parth Patel </strong>
+                  <h1 className="d-inline-block">
+                    <span>H</span>
+                    <span>i</span>
+                    <span>,</span>
+                    <br />
+                    <span>I</span>
+                    <span>'</span>
+                    <span>M</span>
+                    <br />
+                    <h1 className="brand-name">
+                      <span>P</span>
+                      <span>a</span>
+                      <span>r</span>
+                      <span>t</span>
+                      <span>h</span>
+                      <span>&nbsp;</span>
+                      <span>P</span>
+                      <span>a</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>l</span>
+                    </h1>
                   </h1>
-                  <h2 className="my-3">
-                    We are the team of talented developer making websites
+                  <h2 className="mb-3">
+                  Junior Software Developer
                   </h2>
                   <div className="mt-3">
-                    <Link className="btn-get-started" href="/service">
+                    <Link className="btn-get-started" href="/services">
                       Get Started
                     </Link>
                   </div>

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +12,28 @@
 }
 
 .navbar-brand {
-  font-size: 1.9rem !important;
+  h1 {
+    font-size: 1.9rem !important;
+    span {
+      font-weight: 700;
+      font-family: "Poppins", sans-serif;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      display: inline-block;
+      animation-iteration-count: 1;
+  
+      &:hover {
+        animation-name: rubberBand;
+      }
+    }
+  }
+
   color: #565387 !important;
 }
 
 .navbar a {
   font-size: 1.3rem;
-  text-transform: capitalize;
+  // text-transform: capitalize;
 }
 
 .menu_active {
@@ -27,7 +42,7 @@
 }
 
 .navbar a:hover {
-  color: #3498db !important;
+  color: #444174 !important;
 }
 
 @media (max-width: 991px) {
@@ -53,13 +68,63 @@
 
 #header h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
-  color: black;
+  font-size: 4.8rem;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.4rem;
+  color: black;    line-height: 1;
+  span {
+    font-weight: 900;
+    font-family: "Poppins", sans-serif;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    display: inline-block;
+    animation-iteration-count: 1;
+
+    &:hover {
+      animation-name: rubberBand;
+    }
+  }
 }
 
 #header .brand-name {
-  color: #3498db;
+  color: #444174;
+  display: inline-block;
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
 }
 
 #header h2 {
@@ -75,13 +140,13 @@
   padding: 10px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #3498db;
-  border: 2px solid #3498db;
+  color: #444174;
+  border: 2px solid #444174;
   text-decoration: none;
 }
 
 #header .btn-get-started:hover {
-  background: #3498db;
+  background: #444174;
   color: #fff;
 }
 
@@ -97,6 +162,7 @@
   0% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -106,6 +172,7 @@
   0% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -137,6 +204,7 @@ footer p {
   #header .header-img {
     text-align: center;
   }
+
   #header .header-img img {
     width: 60%;
   }
@@ -146,14 +214,26 @@ footer p {
   #header {
     margin-top: 20px;
   }
+
   #header h1 {
     font-size: 28px;
   }
+
   #header h2 {
     font-size: 18px;
     margin-bottom: 30px;
   }
+
   #header .header-img img {
     width: 70%;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
 }
