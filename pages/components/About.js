@@ -11,10 +11,26 @@ export default function About() {
             <Col  className="col-10 mx-auto">
               <Row>
                 <Col md="6" className=" pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column">
-                  <h1>
-                    Welcome to About page <br/>
-                    <strong className="brand-name"> Parth Patel </strong>
+                <h1 className="d-inline-block">
+                Welcome to About page &nbsp;
+                    <div className="brand-name">
+                      <span>P</span>
+                      <span>a</span>
+                      <span>r</span>
+                      <span>t</span>
+                      <span>h</span>
+                      <span>&nbsp;</span>
+                      <span>P</span>
+                      <span>a</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>l</span>
+                    </div>
                   </h1>
+                  {/* <h1>
+                     <br/>
+                    <strong className="brand-name"> Parth Patel </strong>
+                  </h1> */}
                   <h2 className="my-3">
                     We are the team of talented developer making websites
                   </h2>

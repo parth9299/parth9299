@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Button,
   Col,
@@ -9,8 +8,40 @@ import {
   Label,
   Row,
 } from "reactstrap";
-
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 export default function Contact() {
+  const [toSend, setToSend] = useState({
+    fullname: "",
+    phone: "",
+    email: "",
+    textarea: "",
+  });
+console.log(toSend,"toSend");
+  const inputValue = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+  // const sendEmail = (preData) => {
+  //   return setContactData(data, ...preData);
+  // };
+  const form = useRef();
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        `service_btz86ko`,
+        `template_trlwpqv`,
+        form.current,
+        `l2oKVVPHTZ4X5CF2WrDS_`
+      )
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+      });
+  };
   return (
     <>
       <div class="my-5">
@@ -19,29 +50,32 @@ export default function Contact() {
       <div class=" container contact_div">
         <Row>
           <div class="col-md-6 col-10 mx-auto">
-            <Form>
+            <Form ref={form} onSubmit={sendEmail}>
               <FormGroup>
-                <Label for="exampleFormControlInput1" class="form-label">
+                <Label for="fullname" class="form-label">
                   FullName
                 </Label>
                 <Input
                   type="text"
                   name="fullname"
+                  id="fullname"
                   placeholder="Enter your name"
-                  value=""
+                  // value={toSend.fullname}
+                  // onChange={inputValue}
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="exampleFormControlInput1" class="form-label">
+                <Label for="number" class="form-label">
                   Phone
                 </Label>
                 <Input
-                  type="number"
+                  type="text"
                   class="form-control"
-                  id="exampleFormControlInput1"
+                  id="number"
                   name="phone"
                   placeholder="mobile number"
-                  value=""
+                  // value={toSend.number}
+                  // onChange={inputValue}
                 />
               </FormGroup>
               <FormGroup>
@@ -54,23 +88,31 @@ export default function Contact() {
                   id="exampleFormControlInput1"
                   name="email"
                   placeholder="name@example.com"
-                  value=""
+                  // value={toSend.email}
+                  // onChange={inputValue}
                 />
               </FormGroup>
               <FormGroup>
-                <Label for="exampleFormControlTextarea1" class="form-label">
+                <Label for="textarea" class="form-label">
                   Message
                 </Label>
                 <Input
                   class="form-control"
-                  id="exampleFormControlTextarea1"
+                  id="textarea"
                   rows="3"
-                  name="msg"
+                  name="textarea"
                   type="textarea"
+                  // value={toSend.textarea}
+                  // onChange={inputValue}
                 ></Input>
               </FormGroup>
               <div class="col-12">
-                <Button outline color="primary" type="submit">
+                <Button
+                  outline
+                  color="primary"
+                  type="submit"
+                  onClick={sendEmail}
+                >
                   Submit form
                 </Button>
               </div>

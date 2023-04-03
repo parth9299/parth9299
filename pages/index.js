@@ -1,10 +1,64 @@
-import Header from "./components/Header";
-import LandingPage from "./components/LandingPage";
-import Layout from "./components/Layout";
+import Image from "next/image";
+import Link from "next/link";
+import { Col, Container, Row } from "reactstrap";
+import landingIMG from "../assets/image.svg";
+
 export default function Home({ children }) {
   return (
     <>
-      <LandingPage />
+      <section id="header" className="d-flex align-items-center">
+        <Container fluid>
+          <Row className="row">
+            <Col className="col-10 mx-auto">
+              <Row>
+                <Col
+                  md="6"
+                  className=" pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center flex-column"
+                >
+                  <h1 className="d-inline-block">
+                    <span>H</span>
+                    <span>i</span>
+                    <span>,</span>
+                    <br />
+                    <span>I</span>
+                    <span>'</span>
+                    <span>M</span>
+                    <br />
+                    <div className="brand-name">
+                      <span>P</span>
+                      <span>a</span>
+                      <span>r</span>
+                      <span>t</span>
+                      <span>h</span>
+                      <span>&nbsp;</span>
+                      <span>P</span>
+                      <span>a</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>l</span>
+                    </div>
+                  </h1>
+                  <h2 className="mb-3">Junior Software Developer</h2>
+                  <div className="mt-3">
+                    <Link className="btn-get-started" href="/services">
+                      Get Started
+                    </Link>
+                  </div>
+                </Col>
+                <Col lg="6" className="col-lg-6 order-1 order-lg-2 header-img">
+                  <Image
+                    src={landingIMG}
+                    className="img-fluid animated"
+                    alt="Commom img"
+                    width={1000}
+                    height={400}
+                  />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   );
 }
